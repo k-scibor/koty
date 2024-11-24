@@ -27,29 +27,44 @@ namespace KursyWalut
         }
         private void wyswietl(object sender, EventArgs e)
         {
-            
+            kupno0.Text = ""; kupno1.Text = ""; kupno2.Text="";
+            sprzedaz0.Text = ""; sprzedaz1.Text = ""; sprzedaz2.Text="";
+
             Currency c = new Currency();
-            double kursZD, kursSD, kursW;
-            c = deserializujJson(pobierzKurs(waluta.Text, dataPick.Date));
-            kursZD = (double)c.rates[0].bid;
-            kursSD = (double)c.rates[0].ask;
-            kupno.Text = $"Kurs kupna: {kursZD}";
-            sprzedaz.Text = $"Kurs sprzedaży: {kursSD}";
+            double kursZD, kursSD;
+            string[] waluta = { waluta0.Text, waluta1.Text, waluta2.Text };
+            Label[] kupno = { kupno0, kupno1, kupno2 };
+            Label[] sprzedaz = { sprzedaz0, sprzedaz1, sprzedaz2 };
+            int i = 0;
+
+            foreach (string w in waluta) {
+                if (w != "")
+                {
+                    c = deserializujJson(pobierzKurs(w, dataPick.Date));
+                    kursZD = (double)c.rates[0].bid;
+                    kursSD = (double)c.rates[0].ask;
+                    kupno[i].Text = $"Kurs kupna {w} w dniu {dataPick.Date.ToString("yyyy-MM-dd")}: {kursZD} zł";
+                    sprzedaz[i].Text = $"Kurs sprzedaży {w} w dniu {dataPick.Date.ToString("yyyy-MM-dd")}: {kursSD} zł";
+                    i++;
+                }
+                else
+                    break;
+            }
         }
         private Currency deserializujJson(string json)
         {
-            return JsonSerializer.Deserialize<Currency>(json);
+        return JsonSerializer.Deserialize<Currency>(json);
         }
         private string pobierzKurs(string waluta, DateTime data)
         {
-            string d = data.ToString("yyyy-MM-dd");
-            string url = "https://api.nbp.pl/api/exchangerates/rates/c/"+waluta+"/?format=json";
-            string json;
-            using(var webClient = new WebClient())
-            {
-                json = webClient.DownloadString(url);
-            }
-            return json;
+        string d = data.ToString("yyyy-MM-dd");
+        string url = "https://api.nbp.pl/api/exchangerates/rates/c/"+waluta+"/?format=json";
+        string json;
+        using(var webClient = new WebClient())
+        {
+        json = webClient.DownloadString(url);
+        }
+        return json;
         }
     }
 

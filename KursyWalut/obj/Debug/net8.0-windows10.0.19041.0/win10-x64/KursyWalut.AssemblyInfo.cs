@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KursyWalut")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e927c81f6a2fd3ccbbb718375c68fb9d532154a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("KursyWalut")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KursyWalut")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,8 +8,14 @@
             Padding="30,0"
             Spacing="25">
             <Entry 
-                x:Name="waluta"
-                Text="eur"/>
+                x:Name="waluta0"
+                Text=""/>
+            <Entry 
+                x:Name="waluta1"
+                Text=""/>    
+            <Entry 
+                x:Name="waluta2"
+                Text=""/>
             <DatePicker
                 x:Name="dataPick"
                 Date="2024-11-24">
@@ -18,10 +24,22 @@
             <Button 
                 Clicked="wyswietl"/>
             <Label
-                x:Name="kupno">
+                x:Name="kupno0">
             </Label>
             <Label
-                x:Name="sprzedaz">
+                x:Name="sprzedaz0">
+            </Label>
+            <Label
+                x:Name="kupno1">
+            </Label>
+            <Label
+                x:Name="sprzedaz1">
+            </Label>
+            <Label
+                x:Name="kupno2">
+            </Label>
+            <Label
+                x:Name="sprzedaz2">
             </Label>
         </VerticalStackLayout>
     </ScrollView>
