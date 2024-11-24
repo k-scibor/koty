@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KursyWalut.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Entry 
+                x:Name="waluta"
+                Text="eur"/>
+            <DatePicker
+                x:Name="dataPick"
+                Date="2024-11-24">
+                
+            </DatePicker>
+            <Button 
+                Clicked="wyswietl"/>
+            <Label
+                x:Name="kupno">
+            </Label>
+            <Label
+                x:Name="sprzedaz">
+            </Label>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
