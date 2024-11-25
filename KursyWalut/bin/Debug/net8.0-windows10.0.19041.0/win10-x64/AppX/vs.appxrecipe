@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\GAMER\source\repos\KursyWalut\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-11-24T16:11:46.420</Modified>
+      <Modified>2024-11-25T17:37:44.583</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\GAMER\source\repos\KursyWalut\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\KursyWalut.dll">
       <PackagePath>KursyWalut.dll</PackagePath>
-      <Modified>2024-11-24T16:11:46.149</Modified>
+      <Modified>2024-11-25T17:37:44.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\GAMER\source\repos\KursyWalut\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>KursyWalut.exe</PackagePath>
-      <Modified>2024-11-24T16:11:46.153</Modified>
+      <Modified>2024-11-25T17:37:44.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\GAMER\source\repos\KursyWalut\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

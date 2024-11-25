@@ -27,29 +27,16 @@ namespace KursyWalut
         }
         private void wyswietl(object sender, EventArgs e)
         {
-            kupno0.Text = ""; kupno1.Text = ""; kupno2.Text="";
-            sprzedaz0.Text = ""; sprzedaz1.Text = ""; sprzedaz2.Text="";
-
             Currency c = new Currency();
             double kursZD, kursSD;
-            string[] waluta = { waluta0.Text, waluta1.Text, waluta2.Text };
-            Label[] kupno = { kupno0, kupno1, kupno2 };
-            Label[] sprzedaz = { sprzedaz0, sprzedaz1, sprzedaz2 };
-            int i = 0;
-
-            foreach (string w in waluta) {
-                if (w != "")
-                {
-                    c = deserializujJson(pobierzKurs(w, dataPick.Date));
-                    kursZD = (double)c.rates[0].bid;
-                    kursSD = (double)c.rates[0].ask;
-                    kupno[i].Text = $"Kurs kupna {w} w dniu {dataPick.Date.ToString("yyyy-MM-dd")}: {kursZD} zł";
-                    sprzedaz[i].Text = $"Kurs sprzedaży {w} w dniu {dataPick.Date.ToString("yyyy-MM-dd")}: {kursSD} zł";
-                    i++;
-                }
-                else
-                    break;
-            }
+            DateTime data = DateTime.Today;
+            string waluta = picker.SelectedItem.ToString();
+            c = deserializujJson(pobierzKurs(waluta, data));
+            kursZD = (double)c.rates[0].bid;
+            kursSD = (double)c.rates[0].ask;
+            kupno.Text = $"Kurs kupna {waluta} w dniu {data.ToString("yyyy-MM-dd")}: {kursZD} zł";
+            sprzedaz.Text = $"Kurs sprzedaży {waluta} w dniu {data.ToString("yyyy-MM-dd")}: {kursSD} zł";
+                    
         }
         private Currency deserializujJson(string json)
         {

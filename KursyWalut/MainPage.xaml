@@ -7,39 +7,26 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Entry 
-                x:Name="waluta0"
-                Text=""/>
-            <Entry 
-                x:Name="waluta1"
-                Text=""/>    
-            <Entry 
-                x:Name="waluta2"
-                Text=""/>
-            <DatePicker
-                x:Name="dataPick"
-                Date="2024-11-24">
-                
-            </DatePicker>
+            <Picker
+                x:Name="picker"
+                Title="wybierz walutę">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>USD</x:String>
+                        <x:String>GBP</x:String>
+                        <x:String>EUR</x:String>
+                        <x:String>JPY</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
             <Button 
-                Clicked="wyswietl"/>
+                Clicked="wyswietl"
+                Text="Przelicz"/>
             <Label
-                x:Name="kupno0">
+                x:Name="kupno">
             </Label>
             <Label
-                x:Name="sprzedaz0">
-            </Label>
-            <Label
-                x:Name="kupno1">
-            </Label>
-            <Label
-                x:Name="sprzedaz1">
-            </Label>
-            <Label
-                x:Name="kupno2">
-            </Label>
-            <Label
-                x:Name="sprzedaz2">
+                x:Name="sprzedaz">
             </Label>
         </VerticalStackLayout>
     </ScrollView>
